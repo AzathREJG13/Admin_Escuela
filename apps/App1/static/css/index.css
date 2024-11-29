@@ -1,0 +1,18 @@
+.nav-link.active {
+    background-color:  white, #000000; 
+    color: white !important; 
+}
+
+
+
+body {
+    background: linear-gradient(to bottom, #1702bb, #cce3e9);  /* Gradiente de negro a azul oscuro */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.nav-link {
+    font-size: 26px;     /* Aumenta el tamaño de la fuente */
+    padding: 15px 25px;  /* Aumenta el relleno para hacer el enlace más grande */
+}
+
