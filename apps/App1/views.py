@@ -2,11 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
-
-def registro(request):
-    return render(request, '/home/rafael1302/Escritorio/Login/apps/App1/templates/registration/registro.html')
-
+from django.contrib.auth.forms import UserCreationForm
 
 def login(request):
     if request.method == 'POST':
@@ -15,13 +11,25 @@ def login(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            auth_login(request, user)  # Inicia sesión
-            return redirect('home')   # Redirige al home si las credenciales son válidas
+            auth_login(request, user)  
+            return redirect('home')   
         else:
-            messages.error(request, 'Credenciales inválidas')  # Muestra un mensaje de error
+            messages.error(request, 'Credenciales inválidas')  
 
     return render(request, 'login.html')
 
 @login_required
 def home(request):
     return render(request, 'home.html')
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()  
+            messages.success(request, 'Cuenta creada con éxito. Por favor, inicia sesión.') 
+            return redirect('login')  
+    else:
+        form = UserCreationForm()
+    
+    return render(request, 'registration/registro.html', {'form': form})
