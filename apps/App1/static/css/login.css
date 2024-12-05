@@ -1,0 +1,21 @@
+.bg-custom-login {
+    background-color: #fdfeff; /* Cambia este valor al color deseado */
+    border-radius: 10px; /* Opcional: redondea las esquinas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: agrega sombra */
+}
+
+.custom-login-image {
+    width: 800px;
+    height: 700px;
+    object-fit: cover;
+    object-position: left;
+    /* Responsividad opcional */
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    background: linear-gradient(to bottom, #1702bb, #cce3e9);  /* Gradiente de negro a azul oscuro */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
