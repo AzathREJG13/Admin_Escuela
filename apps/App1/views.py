@@ -33,3 +33,6 @@ def register(request):
         form = UserCreationForm()
     
     return render(request, 'registration/registro.html', {'form': form})
+
+def inicio(request):
+    return render(request, 'inicio.html')
